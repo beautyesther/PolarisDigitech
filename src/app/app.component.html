@@ -72,6 +72,171 @@
       <span>Merchant Profile</span>
     </div>
   </aside>
-</section>
 
-<!--<router-outlet></router-outlet>-->
+    <main>
+    <div class="transactionRow">
+      <div class="transactionWidget">
+        <div class="detail">
+          <div>Daily Transaction Volume</div>
+          <div>2,342</div>
+        </div>
+        <div>
+          <img src="../assets/smallChart.svg" alt="">
+        </div>
+      </div>
+
+      <div class="transactionWidget">
+        <div class="detail">
+          <div>Daily Transaction Value</div>
+          <div>₦4,000,000</div>
+        </div>
+        <div>
+          <img src="../assets/smallChart.svg" alt="">
+        </div>
+      </div>
+
+      <div class="transactionWidget">
+        <div class="detail">
+          <div>Total Transaction Volume</div>
+          <div>452,000</div>
+        </div>
+        <div>
+          <img src="../assets/smallChart.svg" alt="">
+        </div>
+      </div>
+
+      <div class="transactionWidget">
+        <div class="detail">
+          <div>Total Transaction Value</div>
+          <div>₦4,000,000</div>
+        </div>
+        <div>
+          <img src="../assets/smallChart.svg" alt="">
+        </div>
+      </div>
+    </div>
+
+<!--    <div class="graph">-->
+<!--      <div>-->
+<!--        <div>-->
+<!--&lt;!&ndash;          <div class="date">Today: {{date | date:'dd, MMM YYY'}}</div>&ndash;&gt;-->
+<!--          <div>-->
+<!--            <div id="chartdiv" style="width: 100%; height: 300px"></div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div>-->
+<!--        <div>-->
+<!--          <div class="heading">Orders</div>-->
+<!--          <div class="horizontalRule"></div>-->
+<!--          <div class="items">-->
+<!--            <span>Pending Orders: </span>-->
+<!--            <span style="color: #EBC315">20</span>-->
+<!--          </div>-->
+<!--          <div class="items">-->
+<!--            <span>Reconcilled Orders: </span>-->
+<!--            <span style="color: #27AE60">80</span>-->
+<!--          </div>-->
+<!--          <div class="items">-->
+<!--            <span>Total Orders: </span>-->
+<!--            <span style="color: #1860EC">100</span>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        <div style="margin-top: 10px">-->
+<!--          <div class="heading">Payments</div>-->
+<!--          <div class="horizontalRule"></div>-->
+<!--          <div class="items">-->
+<!--            <span>Un-reconcilled Payments: </span>-->
+<!--            <span style="color: #EBC315">20</span>-->
+<!--          </div>-->
+<!--          <div class="items">-->
+<!--            <span>Reconcilled Payments: </span>-->
+<!--            <span style="color: #27AE60">80</span>-->
+<!--          </div>-->
+<!--          <div class="items">-->
+<!--            <span>Total Payments: </span>-->
+<!--            <span style="color: #1860EC">100</span>-->
+<!--          </div>-->
+<!--        </div>-->
+
+
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="tableDiv" *ngIf="tableData">-->
+<!--      <div class="heading">Payments</div>-->
+<!--      <div class="tableControl">-->
+<!--        <label>-->
+<!--          <span>select </span>-->
+<!--          <select>-->
+<!--            <option value="20">20</option>-->
+<!--            <option value="30">30</option>-->
+<!--            <option value="40">40</option>-->
+<!--            <option value="50">50</option>-->
+<!--          </select>-->
+<!--&lt;!&ndash;          <span> out of {{tableData.length}} payments</span>&ndash;&gt;-->
+<!--        </label>-->
+
+<!--&lt;!&ndash;        <label class="tableSearch">&ndash;&gt;-->
+<!--&lt;!&ndash;          <img src="../assets/icons/Search.svg" alt="">&ndash;&gt;-->
+<!--&lt;!&ndash;          <input type="search" placeholder="Search payments" #searchValue (keyup)="search(searchValue.value)">&ndash;&gt;-->
+<!--&lt;!&ndash;        </label>&ndash;&gt;-->
+
+<!--        <label>-->
+<!--          <span>Show </span>-->
+<!--          <select>-->
+<!--            <option value="">Select Status</option>-->
+<!--            <option value="Pending">Pending</option>-->
+<!--            <option value="Reconcilled">Reconcilled</option>-->
+<!--          </select>-->
+<!--        </label>-->
+<!--      </div>-->
+
+<!--      <table>-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--          <th></th>-->
+<!--          <th>Item Type</th>-->
+<!--          <th>Price</th>-->
+<!--          <th>Transaction No</th>-->
+<!--          <th>Time</th>-->
+<!--          <th>Status</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+
+<!--&lt;!&ndash;        <tbody>&ndash;&gt;-->
+<!--&lt;!&ndash;        <tr *ngFor="let data of tableData.data[pageIndex]">&ndash;&gt;-->
+<!--&lt;!&ndash;          <td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <span class="initials">&ndash;&gt;-->
+<!--&lt;!&ndash;              {{data.title.split(' ')[0][0]}}{{data.title.split(' ')[1][0]}}&ndash;&gt;-->
+<!--&lt;!&ndash;            </span>&ndash;&gt;-->
+<!--&lt;!&ndash;          </td>&ndash;&gt;-->
+<!--&lt;!&ndash;          <td>{{data.title}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;          <td>${{data.price}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;          <td>{{data.transactionNo}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;          <td>{{data.time}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;          <td [ngStyle]="{color: data.status === 'Pending' ? '#EBC315' : '#27AE60'}">&ndash;&gt;-->
+<!--&lt;!&ndash;            <span class="status">&ndash;&gt;-->
+<!--&lt;!&ndash;              <i [ngStyle]="{background: data.status === 'Pending' ? '#EBC315' : '#27AE60'}" class="statusCircle"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;              {{data.status}}&ndash;&gt;-->
+<!--&lt;!&ndash;            </span>&ndash;&gt;-->
+<!--&lt;!&ndash;          </td>&ndash;&gt;-->
+<!--&lt;!&ndash;        </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;        </tbody>&ndash;&gt;-->
+<!--      </table>-->
+
+<!--&lt;!&ndash;      <div class="paginationDiv">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div>&ndash;&gt;-->
+<!--&lt;!&ndash;          Showing {{tableData.paginatedBy * (pageIndex + 1) - 19}} to {{tableData.paginatedBy * (pageIndex + 1)}} of&ndash;&gt;-->
+<!--&lt;!&ndash;          {{ tableData.totalNoOfData }} entries&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        <div>&ndash;&gt;-->
+<!--&lt;!&ndash;          <button (click)="Previous()">Previous</button>&ndash;&gt;-->
+<!--&lt;!&ndash;          <div>{{pageIndex + 1}}</div>&ndash;&gt;-->
+<!--&lt;!&ndash;          <button (click)="Next()">Next</button>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--    </div>-->
+  </main>
+</section>

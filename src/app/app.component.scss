@@ -26,6 +26,7 @@ header {
     line-height: 28px;
     color: #1875F0;
   }
+
   > div {
     display: flex;
     justify-content: space-between;
@@ -38,6 +39,7 @@ header {
         width: 15px;
         height: 15px;
       }
+
       input {
         font-family: Segoe UI, serif;
         font-size: 15px;
@@ -49,28 +51,36 @@ header {
         outline: none;
       }
     }
+
     > div {
       width: 60%;
       display: flex;
       align-items: center;
       justify-content: flex-end;
+
       nav {
         display: flex;
+
         ul {
           list-style: none;
         }
       }
+
       > div {
         display: flex;
+
         img {
           margin: auto 50px;
         }
+
         .profile {
           display: flex;
           justify-content: center;
+
           .alignLeft {
             text-align: right;
           }
+
           img {
             margin: auto 60px auto 10px;
           }
@@ -124,26 +134,264 @@ section {
       padding: 15px 15px 15px 40px;
       box-sizing: border-box;
       width: 100%;
+
       &:hover {
         background: #E8F1FD;
         border-left: solid 5px #1875F0;
         cursor: pointer;
         padding: 15px 15px 15px 35px;
       }
+
       &.active {
         background: #E8F1FD;
         border-left: solid 5px #1875F0;
         cursor: pointer;
         padding: 15px 15px 15px 35px;
       }
+
       img {
         margin-right: 14px;
       }
+
       span {
         font-family: Segoe UI, serif;
         font-size: 15px;
         line-height: 15px;
         color: #647787;
+      }
+    }
+  }
+
+  main {
+    background: #E5E5E5;
+    height: calc(100vh - 60px);
+    width: calc(100% - 260px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 30px;
+
+    .transactionRow {
+      display: flex;
+      width: 100%;
+      height: 75px;
+      justify-content: space-around;
+
+      .transactionWidget {
+        width: 24%;
+        height: 75px;
+        background: white;
+        border: 1px solid #EEF8FD;
+        box-sizing: border-box;
+        border-radius: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px;
+
+        .detail {
+          :first-child {
+            font-family: Segoe UI, serif;
+            font-size: 12px;
+            line-height: 16px;
+          }
+
+          :nth-child(2) {
+            font-family: Segoe UI, serif;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 24px;
+            align-items: flex-end;
+            color: #262626;
+          }
+        }
+      }
+    }
+
+    .graph {
+      display: flex;
+      padding: 5px;
+      margin-top: 50px;
+      justify-content: space-between;
+
+      > :first-child {
+        width: 74%;
+        background: white;
+        padding: 10px;
+        box-sizing: border-box;
+
+        .date {
+          font-family: Segoe UI, serif;
+          font-size: 18px;
+          line-height: 21px;
+          font-weight: 600;
+          padding-left: 50px;
+        }
+      }
+
+      > :nth-child(2) {
+        width: 25%;
+
+        > div {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          background: white;
+          padding: 12px;
+
+          .heading {
+            font-family: Segoe UI, serif;
+            font-size: 14px;
+            line-height: 16px;
+            color: #262626;
+            margin-top: 10px;
+            font-weight: 700;
+          }
+
+          .horizontalRule {
+            background: linear-gradient(90deg, #27AE60 70%, #FDC203 30%);
+            width: 100%;
+            height: 5px;
+            margin: 10px 0;
+          }
+
+          .items {
+            font-family: Segoe UI, serif;
+            font-size: 14px;
+            line-height: 30px;
+            color: #262626;
+          }
+        }
+      }
+    }
+
+    .tableDiv {
+      margin-top: 30px;
+      padding: 5px;
+
+      .heading {
+        font-family: Segoe UI, serif;
+        font-size: 36px;
+        line-height: 48px;
+        display: flex;
+        align-items: flex-end;
+        color: #262626;
+      }
+
+      .tableControl {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+
+        label {
+          font-family: Segoe UI, serif;
+          font-size: 13px;
+          line-height: 17px;
+          display: flex;
+          align-items: flex-end;
+          color: #262626;
+
+          select {
+            border: none;
+            background: none;
+          }
+        }
+
+        .tableSearch {
+          width: 50%;
+          display: flex;
+          border-bottom: 0.5px solid #787878;
+          align-items: center;
+
+          input {
+            border: none;
+            background: none;
+            width: 100%;
+            padding: 5px;
+            outline: none;
+          }
+        }
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+
+        thead {
+          tr {
+            th {
+              height: 42px;
+              background: #EAEEF0;
+              font-family: Segoe UI, serif;
+              font-size: 14px;
+              line-height: 19px;
+              color: #7F8FA4;
+              text-align: left;
+              padding: 5px;
+            }
+          }
+        }
+
+        tbody {
+          tr {
+            td {
+              height: 50px;
+              background: #FFFFFF;
+              font-family: Segoe UI, serif;
+              font-size: 14px;
+              line-height: 19px;
+              padding: 5px;
+              border-bottom: 1px solid #CCCFD4;
+
+              .initials {
+                text-transform: uppercase;
+                width: 30px;
+                height: 30px;
+                border-radius: 100%;
+                background: #7F8FA4;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+
+              .status {
+                border: 1px solid #CCCFD4;
+                box-sizing: border-box;
+                border-radius: 30px;
+                padding: 5px 10px;
+
+                .statusCircle {
+                  border-radius: 100%;
+                  width: 10px;
+                  height: 10px;
+                  display: inline-block;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .paginationDiv {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+
+        :last-child {
+          display: flex;
+          align-items: center;
+
+          button {
+            padding: 8px;
+            border: 1px solid #CED0DA;
+            box-sizing: border-box;
+            border-radius: 2px;
+            cursor: pointer;
+          }
+
+          div {
+            padding: 8px;
+          }
+        }
       }
     }
   }
