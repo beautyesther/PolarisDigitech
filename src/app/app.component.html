@@ -5,14 +5,17 @@
       <img src="../assets/Search.svg" alt="searchIcon">
       <input type="search" placeholder="search">
     </label>
+
     <div>
       <nav>
         <ul>Support</ul>
         <ul>FAQ</ul>
       </nav>
+
       <div>
         <img src="../assets/notification.svg" alt="notification">
         <div class="profile">
+
           <div>
             <div class="alignLeft">Hello</div>
             <div class="alignLeft">Oluwaleke Ojo</div>
@@ -164,79 +167,82 @@
 <!--      </div>-->
 <!--    </div>-->
 
-<!--    <div class="tableDiv" *ngIf="tableData">-->
-<!--      <div class="heading">Payments</div>-->
-<!--      <div class="tableControl">-->
-<!--        <label>-->
-<!--          <span>select </span>-->
-<!--          <select>-->
-<!--            <option value="20">20</option>-->
-<!--            <option value="30">30</option>-->
-<!--            <option value="40">40</option>-->
-<!--            <option value="50">50</option>-->
-<!--          </select>-->
-<!--&lt;!&ndash;          <span> out of {{tableData.length}} payments</span>&ndash;&gt;-->
+    <div class="tableDiv">
+      <div class="heading">Payments</div>
+
+      <div class="tableControl">
+        <label>
+          <span>select </span>
+          <select>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+          </select>
+<!--          <span> out of {{tableData.length}} payments</span>-->
+        </label>
+
+<!--        <label class="tableSearch">-->
+<!--          <img src="../assets/icons/Search.svg" alt="">-->
+<!--          <input type="search" placeholder="Search payments" #searchValue (keyup)="search(searchValue.value)">-->
 <!--        </label>-->
 
-<!--&lt;!&ndash;        <label class="tableSearch">&ndash;&gt;-->
-<!--&lt;!&ndash;          <img src="../assets/icons/Search.svg" alt="">&ndash;&gt;-->
-<!--&lt;!&ndash;          <input type="search" placeholder="Search payments" #searchValue (keyup)="search(searchValue.value)">&ndash;&gt;-->
-<!--&lt;!&ndash;        </label>&ndash;&gt;-->
+        <label>
+          <span>Show </span>
+          <select>
+            <option value="">All</option>
+            <option value="Reconcilled">Reconcilled</option>
+            <option value="Un-Reconcilled">Un-Reconcilled</option>
+            <option value="Settled">Settled</option>
+            <option value="Un-Settled">Un-Settled</option>
+          </select>
+        </label>
+      </div>
 
-<!--        <label>-->
-<!--          <span>Show </span>-->
-<!--          <select>-->
-<!--            <option value="">Select Status</option>-->
-<!--            <option value="Pending">Pending</option>-->
-<!--            <option value="Reconcilled">Reconcilled</option>-->
-<!--          </select>-->
-<!--        </label>-->
+      <table>
+        <thead>
+        <tr>
+          <th></th>
+          <th>Item Type</th>
+          <th>Price</th>
+          <th>Transaction No</th>
+          <th>Time</th>
+          <th>Status</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let data of tableData.data[pageIndex]">
+          <td>
+            <span class="initials">
+              {{data.title.split(' ')[0][0]}}{{data.title.split(' ')[1][0]}}
+            </span>
+          </td>
+          <td>{{data.title}}</td>
+          <td>${{data.price}}</td>
+          <td>{{data.transactionNo}}</td>
+          <td>{{data.time}}</td>
+          <td [ngStyle]="{color: data.status === 'Pending' ? '#EBC315' : '#27AE60'}">
+            <span class="status">
+              <i [ngStyle]="{background: data.status === 'Pending' ? '#EBC315' : '#27AE60'}" class="statusCircle"></i>
+              {{data.status}}
+            </span>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+<!--      <div class="paginationDiv">-->
+<!--        <div>-->
+<!--          Showing {{tableData.paginatedBy * (pageIndex + 1) - 19}} to {{tableData.paginatedBy * (pageIndex + 1)}} of-->
+<!--          {{ tableData.totalNoOfData }} entries-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <button (click)="Previous()">Previous</button>-->
+<!--          <div>{{pageIndex + 1}}</div>-->
+<!--          <button (click)="Next()">Next</button>-->
+<!--        </div>-->
 <!--      </div>-->
-
-<!--      <table>-->
-<!--        <thead>-->
-<!--        <tr>-->
-<!--          <th></th>-->
-<!--          <th>Item Type</th>-->
-<!--          <th>Price</th>-->
-<!--          <th>Transaction No</th>-->
-<!--          <th>Time</th>-->
-<!--          <th>Status</th>-->
-<!--        </tr>-->
-<!--        </thead>-->
-
-<!--&lt;!&ndash;        <tbody>&ndash;&gt;-->
-<!--&lt;!&ndash;        <tr *ngFor="let data of tableData.data[pageIndex]">&ndash;&gt;-->
-<!--&lt;!&ndash;          <td>&ndash;&gt;-->
-<!--&lt;!&ndash;            <span class="initials">&ndash;&gt;-->
-<!--&lt;!&ndash;              {{data.title.split(' ')[0][0]}}{{data.title.split(' ')[1][0]}}&ndash;&gt;-->
-<!--&lt;!&ndash;            </span>&ndash;&gt;-->
-<!--&lt;!&ndash;          </td>&ndash;&gt;-->
-<!--&lt;!&ndash;          <td>{{data.title}}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;          <td>${{data.price}}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;          <td>{{data.transactionNo}}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;          <td>{{data.time}}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;          <td [ngStyle]="{color: data.status === 'Pending' ? '#EBC315' : '#27AE60'}">&ndash;&gt;-->
-<!--&lt;!&ndash;            <span class="status">&ndash;&gt;-->
-<!--&lt;!&ndash;              <i [ngStyle]="{background: data.status === 'Pending' ? '#EBC315' : '#27AE60'}" class="statusCircle"></i>&ndash;&gt;-->
-<!--&lt;!&ndash;              {{data.status}}&ndash;&gt;-->
-<!--&lt;!&ndash;            </span>&ndash;&gt;-->
-<!--&lt;!&ndash;          </td>&ndash;&gt;-->
-<!--&lt;!&ndash;        </tr>&ndash;&gt;-->
-<!--&lt;!&ndash;        </tbody>&ndash;&gt;-->
-<!--      </table>-->
-
-<!--&lt;!&ndash;      <div class="paginationDiv">&ndash;&gt;-->
-<!--&lt;!&ndash;        <div>&ndash;&gt;-->
-<!--&lt;!&ndash;          Showing {{tableData.paginatedBy * (pageIndex + 1) - 19}} to {{tableData.paginatedBy * (pageIndex + 1)}} of&ndash;&gt;-->
-<!--&lt;!&ndash;          {{ tableData.totalNoOfData }} entries&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;        <div>&ndash;&gt;-->
-<!--&lt;!&ndash;          <button (click)="Previous()">Previous</button>&ndash;&gt;-->
-<!--&lt;!&ndash;          <div>{{pageIndex + 1}}</div>&ndash;&gt;-->
-<!--&lt;!&ndash;          <button (click)="Next()">Next</button>&ndash;&gt;-->
-<!--&lt;!&ndash;        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;      </div>&ndash;&gt;-->
-<!--    </div>-->
+    </div>
   </main>
 </section>

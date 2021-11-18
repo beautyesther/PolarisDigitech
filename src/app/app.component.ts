@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  tableData: any | undefined;
+   pageIndex = 0;
   title = 'TransMonitor';
 }
