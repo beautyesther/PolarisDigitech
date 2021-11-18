@@ -80,3 +80,72 @@ header {
   }
 }
 
+section {
+  display: flex;
+  margin-top: 60px;
+
+  aside {
+    width: 260px;
+    background: white;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    box-sizing: border-box;
+
+    .generateInvoice {
+      font-family: Roboto, serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      letter-spacing: 0.2px;
+      color: #FFFFFF;
+      background: #27AE60;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 160px;
+      height: 30px;
+      margin: 50px 40px;
+      cursor: pointer;
+    }
+
+    .heading {
+      font-family: Segoe UI, serif;
+      margin-top: 35px;
+      font-size: 14px;
+      line-height: 15px;
+      padding: 10px 43px;
+    }
+
+    .menu {
+      display: flex;
+      padding: 15px 15px 15px 40px;
+      box-sizing: border-box;
+      width: 100%;
+      &:hover {
+        background: #E8F1FD;
+        border-left: solid 5px #1875F0;
+        cursor: pointer;
+        padding: 15px 15px 15px 35px;
+      }
+      &.active {
+        background: #E8F1FD;
+        border-left: solid 5px #1875F0;
+        cursor: pointer;
+        padding: 15px 15px 15px 35px;
+      }
+      img {
+        margin-right: 14px;
+      }
+      span {
+        font-family: Segoe UI, serif;
+        font-size: 15px;
+        line-height: 15px;
+        color: #647787;
+      }
+    }
+  }
+}
+
