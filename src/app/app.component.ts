@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AppService} from "./services/app.service";
 
 @Component({
@@ -6,10 +6,8 @@ import {AppService} from "./services/app.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent  {
-  tableData: any | undefined;
-   pageIndex = 0;
-  title = 'TransMonitor';
+export class AppComponent implements OnInit{
+  tableData: any | undefined
 
    constructor(
     private appService: AppService
@@ -21,7 +19,7 @@ export class AppComponent  {
 
   getDataFromTypicode(): any {
     this.appService.getDataFromTypicode().subscribe(res => {
-      // this.tableData = this.paginate(res, this.pageSize);
+      this.tableData = res;
       console.log(this.tableData.data);
     });
   }

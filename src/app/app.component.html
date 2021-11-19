@@ -119,53 +119,47 @@
       </div>
     </div>
 
-<!--    <div class="graph">-->
-<!--      <div>-->
-<!--        <div>-->
-<!--&lt;!&ndash;          <div class="date">Today: {{date | date:'dd, MMM YYY'}}</div>&ndash;&gt;-->
-<!--          <div>-->
-<!--            <div id="chartdiv" style="width: 100%; height: 300px"></div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div>-->
-<!--        <div>-->
-<!--          <div class="heading">Orders</div>-->
-<!--          <div class="horizontalRule"></div>-->
-<!--          <div class="items">-->
-<!--            <span>Pending Orders: </span>-->
-<!--            <span style="color: #EBC315">20</span>-->
-<!--          </div>-->
-<!--          <div class="items">-->
-<!--            <span>Reconcilled Orders: </span>-->
-<!--            <span style="color: #27AE60">80</span>-->
-<!--          </div>-->
-<!--          <div class="items">-->
-<!--            <span>Total Orders: </span>-->
-<!--            <span style="color: #1860EC">100</span>-->
-<!--          </div>-->
-<!--        </div>-->
+    <div class="graph">
+      <div>
+        <div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <div class="heading">Orders</div>
+          <div class="horizontalLine"></div>
+          <div class="items">
+            <span>Pending Orders: </span>
+            <span style="color: #EBC315">20</span>
+          </div>
+          <div class="items">
+            <span>Reconcilled Orders: </span>
+            <span style="color: #27AE60">80</span>
+          </div>
+          <div class="items">
+            <span>Total Orders: </span>
+            <span style="color: #1860EC">100</span>
+          </div>
+        </div>
 
-<!--        <div style="margin-top: 10px">-->
-<!--          <div class="heading">Payments</div>-->
-<!--          <div class="horizontalRule"></div>-->
-<!--          <div class="items">-->
-<!--            <span>Un-reconcilled Payments: </span>-->
-<!--            <span style="color: #EBC315">20</span>-->
-<!--          </div>-->
-<!--          <div class="items">-->
-<!--            <span>Reconcilled Payments: </span>-->
-<!--            <span style="color: #27AE60">80</span>-->
-<!--          </div>-->
-<!--          <div class="items">-->
-<!--            <span>Total Payments: </span>-->
-<!--            <span style="color: #1860EC">100</span>-->
-<!--          </div>-->
-<!--        </div>-->
-
-
-<!--      </div>-->
-<!--    </div>-->
+        <div style="margin-top: 10px">
+          <div class="heading">Payments</div>
+          <div class="horizontalLine"></div>
+          <div class="items">
+            <span>Un-reconcilled Payments: </span>
+            <span style="color: #EBC315">20</span>
+          </div>
+          <div class="items">
+            <span>Reconcilled Payments: </span>
+            <span style="color: #27AE60">80</span>
+          </div>
+          <div class="items">
+            <span>Total Payments: </span>
+            <span style="color: #1860EC">100</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="tableDiv">
       <div class="heading">Payments</div>
@@ -179,13 +173,12 @@
             <option value="40">40</option>
             <option value="50">50</option>
           </select>
-<!--          <span> out of {{tableData.length}} payments</span>-->
         </label>
 
-<!--        <label class="tableSearch">-->
-<!--          <img src="../assets/icons/Search.svg" alt="">-->
-<!--          <input type="search" placeholder="Search payments" #searchValue (keyup)="search(searchValue.value)">-->
-<!--        </label>-->
+        <label class="tableSearch">
+          <img src="../assets/Search.svg" alt="">
+          <input type="search" placeholder="Search payments">
+        </label>
 
         <label>
           <span>Show </span>
@@ -212,37 +205,26 @@
         </thead>
 
         <tbody>
-        <tr *ngFor="let data of tableData.data[pageIndex]">
+        <tr *ngFor="let data of tableData">
           <td>
             <span class="initials">
-              {{data.title.split(' ')[0][0]}}{{data.title.split(' ')[1][0]}}
+              {{data.title.split(' ')[0][0]}}
+              {{data.title.split(' ')[1][0]}}
             </span>
           </td>
           <td>{{data.title}}</td>
-          <td>${{data.price}}</td>
-          <td>{{data.transactionNo}}</td>
-          <td>{{data.time}}</td>
-          <td [ngStyle]="{color: data.status === 'Pending' ? '#EBC315' : '#27AE60'}">
+          <td>$5000</td>
+          <td>1234567890</td>
+          <td>12:30</td>
+          <td [ngStyle]="{color: data.completed === false ? '#EBC315' : '#27AE60'}">
             <span class="status">
-              <i [ngStyle]="{background: data.status === 'Pending' ? '#EBC315' : '#27AE60'}" class="statusCircle"></i>
-              {{data.status}}
+              <i [ngStyle]="{background: data.completed === false ? '#EBC315' : '#27AE60'}" class="statusCircle"></i>
+              {{data.completed}}
             </span>
           </td>
         </tr>
         </tbody>
       </table>
-
-<!--      <div class="paginationDiv">-->
-<!--        <div>-->
-<!--          Showing {{tableData.paginatedBy * (pageIndex + 1) - 19}} to {{tableData.paginatedBy * (pageIndex + 1)}} of-->
-<!--          {{ tableData.totalNoOfData }} entries-->
-<!--        </div>-->
-<!--        <div>-->
-<!--          <button (click)="Previous()">Previous</button>-->
-<!--          <div>{{pageIndex + 1}}</div>-->
-<!--          <button (click)="Next()">Next</button>-->
-<!--        </div>-->
-<!--      </div>-->
     </div>
   </main>
 </section>
